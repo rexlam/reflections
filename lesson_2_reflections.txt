@@ -6,13 +6,33 @@ What value do you think it offers?
 How can you use the staging area to make sure you have one commit per logical
 change?
 
+Type 'git diff --staged' to check differences in files in staging area.
+
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+When I want to modify a feature and keep two versions of the same file.
+Branching allows multiple versions of the same file to be stored in version control.
+
 How do the diagrams help you visualize the branch structure?
+
+Each commit is linked to the parent.  If you have a stray branch, you won't be
+able to get back to it unless you have written down the commit id.  Branch is not
+the same as local commit.  Use git checkout -b new_branch_name to do
+equivalent of git branch new_branch_name and git checkout new_branch_name.  A
+branch is essentially a label.
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
-What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
+Useful view: git log --graph --oneline
+The result of merging two branches together is a single history log with commits
+from both branches listed chronologically.
+
+What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+
+It is faster to use Git's automatic merging because it takes care of the
+common simple merges.  You might find prompts for merges that you might
+consider simple to resolve, but git chooses to be safe rather than have
+undesirable side effects.
